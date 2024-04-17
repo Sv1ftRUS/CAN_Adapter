@@ -30,4 +30,11 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>User</name>
+			<type>2</type>
+			<location>D:/Slava/programming/STM32_Projects/CAN_Adapter/Core/Inc/User</location>
+		</link>
+	</linkedResources>
 </projectDescription>

@@ -11,8 +11,8 @@ RM := rm -rf
 -include sources.mk
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
+-include Core/Src/User/subdir.mk
 -include Core/Src/subdir.mk
--include Core/Inc/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -77,6 +77,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 CAN_Adapter.list \
 
+OBJCOPY_HEX += \
+CAN_Adapter.hex \
+
 
 # All Target
 all: main-build
@@ -100,12 +103,17 @@ CAN_Adapter.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+CAN_Adapter.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "CAN_Adapter.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) CAN_Adapter.elf CAN_Adapter.list CAN_Adapter.map default.size.stdout
+	-$(RM) CAN_Adapter.elf CAN_Adapter.hex CAN_Adapter.list CAN_Adapter.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

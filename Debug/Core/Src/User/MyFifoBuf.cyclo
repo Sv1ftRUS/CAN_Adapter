@@ -1,0 +1,15 @@
+../Core/Src/User/MyFifoBuf.c:183:16:avaibleForRead_CANtoPCMsgBuf	1
+../Core/Src/User/MyFifoBuf.c:188:16:avaibleForWrite_CANtoPCMsgBuf	1
+../Core/Src/User/MyFifoBuf.c:193:16:directWrite_CANtoPCMsgBuf	2
+../Core/Src/User/MyFifoBuf.c:207:16:directRead_CANtoPCMsgBuf	2
+../Core/Src/User/MyFifoBuf.c:215:16:overrun_CANtoPCMsgBuf	1
+../Core/Src/User/MyFifoBuf.c:221:16:avaibleForRead_PCtoCANMsgBuf	1
+../Core/Src/User/MyFifoBuf.c:226:16:avaibleForWrite_PCtoCANMsgBuf	1
+../Core/Src/User/MyFifoBuf.c:231:16:directWrite_PCtoCANMsgBuf	2
+../Core/Src/User/MyFifoBuf.c:245:16:directRead_PCtoCANMsgBuf	2
+../Core/Src/User/MyFifoBuf.c:253:16:overrun_PCtoCANMsgBuf	1
+../Core/Src/User/MyFifoBuf.c:259:16:avaibleForRead_CANlimMsgBuf	1
+../Core/Src/User/MyFifoBuf.c:264:16:avaibleForWrite_CANlimMsgBuf	1
+../Core/Src/User/MyFifoBuf.c:269:16:directWrite_CANlimMsgBuf	2
+../Core/Src/User/MyFifoBuf.c:283:16:directRead_CANlimMsgBuf	2
+../Core/Src/User/MyFifoBuf.c:291:16:overrun_CANlimMsgBuf	1

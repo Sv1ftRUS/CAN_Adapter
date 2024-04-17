@@ -25,6 +25,7 @@ S_DEPS :=
 CXXM_DEPS := 
 C_DEPS := 
 CC_DEPS := 
+OBJCOPY_HEX := 
 SIZE_OUTPUT := 
 C++_DEPS := 
 SU_FILES := 
@@ -38,7 +39,7 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-Core/Inc \
+Core/Src/User \
 Core/Src \
 Core/Startup \
 Drivers/STM32F1xx_HAL_Driver/Src \
