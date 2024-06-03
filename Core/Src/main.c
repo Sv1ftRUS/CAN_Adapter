@@ -48,7 +48,8 @@ DMA_HandleTypeDef hdma_usart2_tx;
 DMA_HandleTypeDef hdma_usart2_rx;
 
 /* USER CODE BEGIN PV */
-
+//Error Handler
+uint8_t ErrorHandler_Code=0;
 //UART vars
 uint8_t str_Tx[]=" CAN project USART Transmit!!!";
 uint8_t str_Rx[50];
@@ -507,7 +508,10 @@ void PCtoCANBuf_processing()
 			case 3://Init - настроить CAN
 			//if(MsgCANConf->Communication==2)//Init - настроить CAN
 			{
-				hcan1.Instance = MsgCANConf->Instance;
+				if(HAL_CAN_Stop(&hcan1)!= HAL_OK) {Error_Handler();}
+				if(HAL_CAN_DeInit(&hcan1)!= HAL_OK) {Error_Handler();}
+
+				hcan1.Instance = CAN1;//MsgCANConf->Instance;
 				hcan1.Init.Prescaler = MsgCANConf->Prescaler;
 				hcan1.Init.Mode = MsgCANConf->Mode;
 				hcan1.Init.SyncJumpWidth = MsgCANConf->SyncJumpWidth;
@@ -520,6 +524,12 @@ void PCtoCANBuf_processing()
 				hcan1.Init.ReceiveFifoLocked = MsgCANConf->ReceiveFifoLocked;
 				hcan1.Init.TransmitFifoPriority = MsgCANConf->TransmitFifoPriority;;
 				if (HAL_CAN_Init(&hcan1) != HAL_OK) {Error_Handler();}
+
+				if(HAL_CAN_Start(&hcan1) != HAL_OK) {Error_Handler();};
+				if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING)!= HAL_OK) {Error_Handler();}
+				if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_FULL)!= HAL_OK) {Error_Handler();}
+				if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO1_MSG_PENDING)!= HAL_OK) {Error_Handler();}
+				if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO1_FULL)!= HAL_OK) {Error_Handler();}
 				break;
 			}
 			case 4://FilterConf - настроить CAN фильтр
@@ -611,7 +621,7 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
-	  HAL_UART_Transmit(&huart2, (uint8_t*)"Error_Handler", 13, 1000);
+	  HAL_UART_Transmit(&huart2, (uint8_t*)"Error_Handler_Code:", 13, 1000);
 	  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, 1);
   }
   /* USER CODE END Error_Handler_Debug */

@@ -21,7 +21,7 @@ uint8_t CANtoPCMsgBufHead=0;
 
 
 
-
+//uint8_t CANtoPCMsgBufHead=0;
 
 /*
 //CANRx

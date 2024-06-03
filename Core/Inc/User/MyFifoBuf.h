@@ -65,9 +65,9 @@ typedef struct
 	uint8_t Instance;
 	uint8_t Prescaler;
 	uint8_t Mode;
-	uint8_t SyncJumpWidth;
-	uint8_t TimeSeg1;
-	uint8_t TimeSeg2;
+	uint32_t SyncJumpWidth;
+	uint32_t TimeSeg1;
+	uint32_t TimeSeg2;
 	uint8_t TimeTriggeredMode;
 	uint8_t AutoBusOff;
 	uint8_t AutoWakeUp;
@@ -80,6 +80,9 @@ typedef struct
 {
 	uint32_t msgType;
 	uint8_t Communication;
+	uint8_t Reserved0;
+	uint8_t Reserved1;
+	uint8_t Reserved2;
 	uint32_t FilterIdHigh;
 	uint32_t FilterIdLow;
 	uint32_t FilterMaskIdHigh;
