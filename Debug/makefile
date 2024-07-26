@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (11.3.rel1)
+# Toolchain: GNU Tools for STM32 (12.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -88,8 +88,8 @@ all: main-build
 main-build: CAN_Adapter.elf secondary-outputs
 
 # Tool invocations
-CAN_Adapter.elf CAN_Adapter.map: $(OBJS) $(USER_OBJS) D:\Slava\programming\STM32_Projects\CAN_Adapter\STM32F107VCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "CAN_Adapter.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\Slava\programming\STM32_Projects\CAN_Adapter\STM32F107VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CAN_Adapter.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+CAN_Adapter.elf CAN_Adapter.map: $(OBJS) $(USER_OBJS) C:\Users\volgunov\Documents\CAN_Adapter\STM32F107VCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "CAN_Adapter.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\volgunov\Documents\CAN_Adapter\STM32F107VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CAN_Adapter.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
