@@ -64,20 +64,21 @@ Reset_Handler:
     bl  SystemInit
 
 /* Copy the data segment initializers from flash to SRAM */
-  ldr r0, =_sdata
-  ldr r1, =_edata
-  ldr r2, =_sidata
-  movs r3, #0
+  ldr r0, =_sdata /*в регистр r0 записывается переменная адрес _sdata start flash data т.е. это адрес не FLASH , а RAM ! , т.е. куда копировать из FLASH*/
+  ldr r1, =_edata /*в регистр r1 записывается переменная адрес _edata end flash data*/
+  ldr r2, =_sidata /*в регистр r2 записывается переменная адрес _sidata загрузка значения переменной _sidata в регистр r2 ( см. ld файл _sidata = LOADADDR(.data); )
+ // смотрим отладчиком _sidata = 0x800249c - это адрес FLASH начиная с которого у нас хранятся инициализированные данные*/
+  movs r3, #0 /*в регистр r3 записывается 0*/
   b LoopCopyDataInit
 
 CopyDataInit:
-  ldr r4, [r2, r3]
-  str r4, [r0, r3]
-  adds r3, r3, #4
+  ldr r4, [r2, r3] /*[]-значение, без скобочек - адрес...или наоборот..., в r4 записывается значение [r2,r3]*/
+  str r4, [r0, r3] /*загрузка значения из адреса r4 по адресу [r0, r3]*/
+  adds r3, r3, #4 /*r3=r3+4*/
 
 LoopCopyDataInit:
-  adds r4, r0, r3
-  cmp r4, r1
+  adds r4, r0, r3 /*в регистр r4 записывается адрес из r0+r3*/
+  cmp r4, r1	/*сравниваем r4 и r1, достигло ли значение величины r1 (_edata), если нет то bcc CopyDataInit*/
   bcc CopyDataInit
   
 /* Zero fill the bss segment. */

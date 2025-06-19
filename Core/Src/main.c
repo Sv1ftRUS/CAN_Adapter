@@ -99,8 +99,8 @@ static void MX_DMA_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_CAN1_Init(void);
 /* USER CODE BEGIN PFP */
-//void User_UartCompleteCallback(UART_HandleTypeDef *huart);//переопределение weak-функции обработчика прерывания приема UART
-//void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart);//переопределение weak-функции обработчика прерывания приема половины ДМА
+//void User_UartCompleteCallback(UART_HandleTypeDef *huart);//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ weak-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ UART
+//void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart);//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ weak-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
 __inline void CANtoPCBuf_processing();
 __inline void PCtoCANBuf_processing();
 
@@ -109,7 +109,7 @@ __inline void PCtoCANBuf_processing();
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 /*
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)//переопределение weak-функции обработчика прерывания приема UART
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ weak-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ UART
 {
 	if (huart==&huart2)
 	{
@@ -119,17 +119,17 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)//переопределение weak-фу
 }
 */
 /*
-void User_UartCompleteCallback(UART_HandleTypeDef *huart)//назначение пользовательской функции обработки прерывания
+void User_UartCompleteCallback(UART_HandleTypeDef *huart)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	char msg[]="User_UartCompleteCallback";
 		HAL_UART_Transmit(huart, msg, sizeof(msg), 1000);
 }
 */
 /*
-void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart)//переопределение weak-функции обработчика прерывания приема половины ДМА
+void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ weak-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
 {
 	if(huart == &huart2)
-		HAL_UART_Transmit_DMA(huart, str_Tx_DMA_HalfRecive, sizeof(str_Tx_DMA_HalfRecive));//но чет так подумал лучше наверн модифицировать код в файлике обработки прерывания
+		HAL_UART_Transmit_DMA(huart, str_Tx_DMA_HalfRecive, sizeof(str_Tx_DMA_HalfRecive));//пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 }
 */
 
@@ -142,6 +142,7 @@ void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart)//переопределение wea
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -187,13 +188,13 @@ int main(void)
   canFilterConfig.SlaveStartFilterBank = 14;
   HAL_CAN_ConfigFilter(&hcan1, &canFilterConfig);
 
-  if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING)!= HAL_OK) {Error_Handler();};//необходимо вручную включить прерывания и стартануть КАН
+  if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING)!= HAL_OK) {Error_Handler();};//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
   if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_FULL)!= HAL_OK) {Error_Handler();};
-  if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO1_MSG_PENDING)!= HAL_OK) {Error_Handler();};//необходимо вручную включить прерывания и стартануть КАН
+  if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO1_MSG_PENDING)!= HAL_OK) {Error_Handler();};//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
   if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO1_FULL)!= HAL_OK) {Error_Handler();};
   if(HAL_CAN_Start(&hcan1) != HAL_OK) {Error_Handler();};
 
-  //HAL_UART_RegisterCallback(&huart2, HAL_UART_RX_COMPLETE_CB_ID, User_UartCompleteCallback);//подсказчик этой функции не работает и не находит определение
+  //HAL_UART_RegisterCallback(&huart2, HAL_UART_RX_COMPLETE_CB_ID, User_UartCompleteCallback);//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -218,18 +219,18 @@ int main(void)
   {
 	  //HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
 
-	  //Тестирование UART
-	  //TX(МК плата) 11- 14 - 5- RX(компьютер) коричн//каб rs232 - 2
+	  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ UART
+	  //TX(пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ) 11- 14 - 5- RX(пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ) пїЅпїЅпїЅпїЅпїЅпїЅ//пїЅпїЅпїЅ rs232 - 2
 
-	  //HAL_UART_Receive (&huart2, str_Rx, sizeof(str_Rx), 10000);//программа не выйдет из этой функции пока не получит все байты
-	  //HAL_UART_Receive_IT (&huart2, str_Rx, sizeof(str_Rx));//а здесь программа просто включила ожидание получение всех байт и пошла дальше по своим делам
+	  //HAL_UART_Receive (&huart2, str_Rx, sizeof(str_Rx), 10000);//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+	  //HAL_UART_Receive_IT (&huart2, str_Rx, sizeof(str_Rx));//пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 	  //HAL_UART_Receive_DMA(&huart2, str_Rx_DMA, sizeof(str_Rx_DMA));
 	  //HAL_Delay(1000);
 	  //HAL_UART_Transmit(&huart2, str_Tx, sizeof(str_Tx), 10000);
 	  //HAL_UART_Transmit_IT(&huart2, str_Tx, sizeof(str_Tx));
 	  //HAL_UART_Transmit_DMA(&huart2, str_Tx_DMA, sizeof(str_Tx_DMA));
 
-	  //Тестирование CAN
+	  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN
 	  //if(HAL_CAN_AddTxMessage(&hcan1, &TxHeader1, CAN_Tx_Arr, &pTxMailbox)!=HAL_OK)
 		  //Error_Handler();
 	  //HAL_Delay(100);
@@ -249,7 +250,7 @@ int main(void)
 
 
 	  //--------------------------------------------------------
-	  //отправка кан сообщений для теста
+	  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 /*
 	  if(HAL_CAN_AddTxMessage(&hcan1, &TxHeader1, CAN_Tx_Arr, &pTxMailbox)!=HAL_OK)
 		   Error_Handler();
@@ -266,9 +267,14 @@ int main(void)
 */
 	   //-----------------------------------------------------
 
-	  CANtoPCBuf_processing();//обработка буфера входящих сообщений от PC	PCBuf_processing();
+	  //HW Test
+/*
+	  HAL_Delay(100);
+	  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+	  HAL_UART_Transmit(&huart2, (uint8_t*)"Hello!", sizeof("Hello!"), 1000);*/
+	  CANtoPCBuf_processing();//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ PC	PCBuf_processing();
 	  //HAL_Delay(100);
-	  PCtoCANBuf_processing();//обработка буфера входящих сообщений от CAN CANBuf_processing();
+	  PCtoCANBuf_processing();//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ CAN CANBuf_processing();
 	  //HAL_Delay(100);
 	  if(overrun_PCtoCANMsgBuf()||overrun_CANtoPCMsgBuf()||overrun_CANlimMsgBuf())
 		  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, 1);
@@ -295,15 +301,13 @@ void SystemClock_Config(void)
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV5;
+  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.Prediv1Source = RCC_PREDIV1_SOURCE_PLL2;
+  RCC_OscInitStruct.Prediv1Source = RCC_PREDIV1_SOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
-  RCC_OscInitStruct.PLL2.PLL2State = RCC_PLL2_ON;
-  RCC_OscInitStruct.PLL2.PLL2MUL = RCC_PLL2_MUL8;
-  RCC_OscInitStruct.PLL2.HSEPrediv2Value = RCC_HSE_PREDIV2_DIV5;
+  RCC_OscInitStruct.PLL2.PLL2State = RCC_PLL_NONE;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -381,7 +385,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 230400;
+  huart2.Init.BaudRate = 921600;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
@@ -425,8 +429,8 @@ static void MX_DMA_Init(void)
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-/* USER CODE BEGIN MX_GPIO_Init_1 */
-/* USER CODE END MX_GPIO_Init_1 */
+  /* USER CODE BEGIN MX_GPIO_Init_1 */
+  /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
@@ -444,8 +448,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
 
-/* USER CODE BEGIN MX_GPIO_Init_2 */
-/* USER CODE END MX_GPIO_Init_2 */
+  /* USER CODE BEGIN MX_GPIO_Init_2 */
+  /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
@@ -457,12 +461,12 @@ void PCtoCANBuf_processing()
 		NVIC_DisableIRQ(USART2_IRQn);
 		PCtoCANmsg_ptr = directRead_PCtoCANMsgBuf();
 
-		//обработка PC_toCAN
+		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ PC_toCAN
 		if(PCtoCANmsg_ptr->msgType==PC_toCAN)
 			//HAL_UART_Transmit(&huart2, PCtoCANmsg_ptr, sizeof(PCtoCANMsg), 1000);
-			if(HAL_CAN_AddTxMessage(&hcan1, &PCtoCANmsg_ptr->CANMsg.TxHeader, (uint8_t*)PCtoCANmsg_ptr->CANMsg.CAN_Tx_Arr, &pTxMailbox)!=HAL_OK){Error_Handler();}//отправка в CAN
+			if(HAL_CAN_AddTxMessage(&hcan1, &PCtoCANmsg_ptr->CANMsg.TxHeader, (uint8_t*)PCtoCANmsg_ptr->CANMsg.CAN_Tx_Arr, &pTxMailbox)!=HAL_OK){Error_Handler();}//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ CAN
 
-		//обработка PC_toCAN_State
+		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ PC_toCAN_State
 		if(PCtoCANmsg_ptr->msgType==PC_toCAN_State)
 		{
 			PCtoCANMsgCANConf* MsgCANConf;
@@ -475,15 +479,15 @@ void PCtoCANBuf_processing()
 
 			switch(MsgCANConf->Communication)
 			{
-			case 0://Disconnect - остановить CAN
-			//if(MsgCANConf->Communication==0)//Disconnect - остановить CAN
+			case 0://Disconnect - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN
+			//if(MsgCANConf->Communication==0)//Disconnect - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN
 			{
 				if(HAL_CAN_Stop(&hcan1)!= HAL_OK) {Error_Handler();}
 				if(HAL_CAN_DeInit(&hcan1)!= HAL_OK) {Error_Handler();}
 				break;
 			}
-			case 1://Connect - запустить CAN
-			//if(MsgCANConf->Communication==1)//Connect - запустить CAN
+			case 1://Connect - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN
+			//if(MsgCANConf->Communication==1)//Connect - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN
 			{
 				if (HAL_CAN_Init(&hcan1) != HAL_OK) {Error_Handler();}
 				if(HAL_CAN_Start(&hcan1) != HAL_OK) {Error_Handler();};
@@ -493,7 +497,7 @@ void PCtoCANBuf_processing()
 				if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO1_FULL)!= HAL_OK) {Error_Handler();}
 				break;
 			}
-			case 2://Reset - сбросить CAN
+			case 2://Reset - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN
 			{
 				if(HAL_CAN_Stop(&hcan1)!= HAL_OK) {Error_Handler();}
 				if(HAL_CAN_DeInit(&hcan1)!= HAL_OK) {Error_Handler();}
@@ -505,8 +509,8 @@ void PCtoCANBuf_processing()
 				if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO1_FULL)!= HAL_OK) {Error_Handler();}
 				break;
 			}
-			case 3://Init - настроить CAN
-			//if(MsgCANConf->Communication==2)//Init - настроить CAN
+			case 3://Init - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN
+			//if(MsgCANConf->Communication==2)//Init - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN
 			{
 				if(HAL_CAN_Stop(&hcan1)!= HAL_OK) {Error_Handler();}
 				if(HAL_CAN_DeInit(&hcan1)!= HAL_OK) {Error_Handler();}
@@ -532,8 +536,8 @@ void PCtoCANBuf_processing()
 				if(HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO1_FULL)!= HAL_OK) {Error_Handler();}
 				break;
 			}
-			case 4://FilterConf - настроить CAN фильтр
-			//if(MsgCANConf->Communication==3)//FilterConf - настроить CAN фильтр
+			case 4://FilterConf - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN пїЅпїЅпїЅпїЅпїЅпїЅ
+			//if(MsgCANConf->Communication==3)//FilterConf - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN пїЅпїЅпїЅпїЅпїЅпїЅ
 			{
 				CAN_FilterTypeDef canFilterConfig;
 				canFilterConfig.FilterBank = CANMsgCANFiltIDConf->FilterBank;
@@ -564,7 +568,7 @@ void CANtoPCBuf_processing()
 	{
 		NVIC_DisableIRQ(CAN1_RX0_IRQn);
 		CANtoPCmsg_ptr = directRead_CANtoPCMsgBuf();
-		//обработка CAN_toPC
+		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN_toPC
 		if(CANtoPCmsg_ptr->msgType==CAN_toPC)
 			if(HAL_UART_GetState(&huart2) == HAL_UART_STATE_READY)
 				if(HAL_UART_Transmit_DMA(&huart2, (uint8_t*)CANtoPCmsg_ptr, sizeof(CANtoPCMsg))!=HAL_OK)//{Error_Handler();}
@@ -602,7 +606,7 @@ void CANtoPCBuf_processing()
 				}
 		}
 #endif
-		//обработка CAN_toPC_State
+		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CAN_toPC_State
 		else if(CANtoPCmsg_ptr->msgType==CAN_toPC_State)
 			;//
 		NVIC_EnableIRQ(CAN1_RX0_IRQn);

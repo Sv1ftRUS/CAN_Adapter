@@ -313,7 +313,7 @@ void USART2_IRQHandler(void)
 		  //status= HAL_UART_Transmit_IT(&huart2, str_Tx_DMA_HalfReciveI, sizeof(str_Tx_DMA_HalfReciveI));
 
 
-		//HAL_Delay(500);//зависает
+		//HAL_Delay(500);//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		//do{
 			//HAL_UART_IRQHandler(&huart2);
 			//status= HAL_UART_Transmit_IT(&huart2, str_Tx_DMA_HalfReciveI, sizeof(str_Tx_DMA_HalfReciveI));
@@ -331,9 +331,9 @@ void USART2_IRQHandler(void)
 
 /* USER CODE BEGIN 1 */
 
-void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)//переопределение weak-функции обработчика прерывания окончания отправки по UART. При окончании отправки по uART, смотрим есть ли еще в буфере принятые КАН-сообщения, если есть отправляем
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ weak-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ UART. пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ uART, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 #ifndef CANlimMsg_enable
-{//в этой функции нужно проверять это сообщение на отправку в PC? если нет то очередь встанет =/
+{//пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ PC? пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ =/
 	static CANtoPCMsg * CANtoPCmsg_ptr = NULL;
 	if(huart == &huart2)
 		if (avaibleForRead_CANtoPCMsgBuf())
@@ -356,13 +356,13 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)//переопределение weak-фу
 
 #endif
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)//переопределение weak-функции обработчика прерывания окончания приема по UART. При окончании приема по uART, кладем это сообщение в PCtoCANMsgBuf
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ weak-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ UART. пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ uART, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ PCtoCANMsgBuf
 {
 	static PCtoCANMsg * PCtoCANmsg_ptr = NULL;
 	if(huart == &huart2)
 		{
 			PCtoCANmsg_ptr = directWrite_PCtoCANMsgBuf();
-			if(HAL_UART_Receive_DMA(&huart2, (uint8_t*)PCtoCANmsg_ptr, sizeof(PCtoCANMsg))!=HAL_OK){Error_Handler();}//если периодически не будет вызываться HAL_UART_Receive_DMA, то приема не будет
+			if(HAL_UART_Receive_DMA(&huart2, (uint8_t*)PCtoCANmsg_ptr, sizeof(PCtoCANMsg))!=HAL_OK){Error_Handler();}//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ HAL_UART_Receive_DMA, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 			//HAL_CAN_AddTxMessage(&hcan1, &PCtoCANmsg_ptr, sizeof(PCtoCANMsg), &pTxMailbox);
 		}
 }

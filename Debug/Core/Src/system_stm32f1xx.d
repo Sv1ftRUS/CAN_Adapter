@@ -1,10 +1,10 @@
 Core/Src/system_stm32f1xx.o: ../Core/Src/system_stm32f1xx.c \
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f107xc.h \
- ../Drivers/CMSIS/Include/core_cm3.h \
- ../Drivers/CMSIS/Include/cmsis_version.h \
- ../Drivers/CMSIS/Include/cmsis_compiler.h \
- ../Drivers/CMSIS/Include/cmsis_gcc.h \
+ ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/core_cm3.h \
+ ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/cmsis_version.h \
+ ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/cmsis_compiler.h \
+ ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/cmsis_gcc.h \
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
@@ -25,10 +25,10 @@ Core/Src/system_stm32f1xx.o: ../Core/Src/system_stm32f1xx.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f107xc.h:
-../Drivers/CMSIS/Include/core_cm3.h:
-../Drivers/CMSIS/Include/cmsis_version.h:
-../Drivers/CMSIS/Include/cmsis_compiler.h:
-../Drivers/CMSIS/Include/cmsis_gcc.h:
+../Drivers/CMSIS/Device/ST/STM32F1xx/Include/core_cm3.h:
+../Drivers/CMSIS/Device/ST/STM32F1xx/Include/cmsis_version.h:
+../Drivers/CMSIS/Device/ST/STM32F1xx/Include/cmsis_compiler.h:
+../Drivers/CMSIS/Device/ST/STM32F1xx/Include/cmsis_gcc.h:
 ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:

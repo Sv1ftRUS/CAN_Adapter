@@ -20,7 +20,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -66,6 +65,7 @@ extern DMA_HandleTypeDef hdma_usart2_rx;
   */
 void HAL_MspInit(void)
 {
+
   /* USER CODE BEGIN MspInit 0 */
 
   /* USER CODE END MspInit 0 */
@@ -85,19 +85,19 @@ void HAL_MspInit(void)
 }
 
 /**
-* @brief CAN MSP Initialization
-* This function configures the hardware resources used in this example
-* @param hcan: CAN handle pointer
-* @retval None
-*/
+  * @brief CAN MSP Initialization
+  * This function configures the hardware resources used in this example
+  * @param hcan: CAN handle pointer
+  * @retval None
+  */
 void HAL_CAN_MspInit(CAN_HandleTypeDef* hcan)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   if(hcan->Instance==CAN1)
   {
-  /* USER CODE BEGIN CAN1_MspInit 0 */
+    /* USER CODE BEGIN CAN1_MspInit 0 */
 
-  /* USER CODE END CAN1_MspInit 0 */
+    /* USER CODE END CAN1_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_CAN1_CLK_ENABLE();
 
@@ -125,26 +125,27 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* hcan)
     HAL_NVIC_EnableIRQ(CAN1_RX0_IRQn);
     HAL_NVIC_SetPriority(CAN1_RX1_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(CAN1_RX1_IRQn);
-  /* USER CODE BEGIN CAN1_MspInit 1 */
+    /* USER CODE BEGIN CAN1_MspInit 1 */
 
-  /* USER CODE END CAN1_MspInit 1 */
+    /* USER CODE END CAN1_MspInit 1 */
+
   }
 
 }
 
 /**
-* @brief CAN MSP De-Initialization
-* This function freeze the hardware resources used in this example
-* @param hcan: CAN handle pointer
-* @retval None
-*/
+  * @brief CAN MSP De-Initialization
+  * This function freeze the hardware resources used in this example
+  * @param hcan: CAN handle pointer
+  * @retval None
+  */
 void HAL_CAN_MspDeInit(CAN_HandleTypeDef* hcan)
 {
   if(hcan->Instance==CAN1)
   {
-  /* USER CODE BEGIN CAN1_MspDeInit 0 */
+    /* USER CODE BEGIN CAN1_MspDeInit 0 */
 
-  /* USER CODE END CAN1_MspDeInit 0 */
+    /* USER CODE END CAN1_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_CAN1_CLK_DISABLE();
 
@@ -158,27 +159,27 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* hcan)
     HAL_NVIC_DisableIRQ(CAN1_TX_IRQn);
     HAL_NVIC_DisableIRQ(CAN1_RX0_IRQn);
     HAL_NVIC_DisableIRQ(CAN1_RX1_IRQn);
-  /* USER CODE BEGIN CAN1_MspDeInit 1 */
+    /* USER CODE BEGIN CAN1_MspDeInit 1 */
 
-  /* USER CODE END CAN1_MspDeInit 1 */
+    /* USER CODE END CAN1_MspDeInit 1 */
   }
 
 }
 
 /**
-* @brief UART MSP Initialization
-* This function configures the hardware resources used in this example
-* @param huart: UART handle pointer
-* @retval None
-*/
+  * @brief UART MSP Initialization
+  * This function configures the hardware resources used in this example
+  * @param huart: UART handle pointer
+  * @retval None
+  */
 void HAL_UART_MspInit(UART_HandleTypeDef* huart)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   if(huart->Instance==USART2)
   {
-  /* USER CODE BEGIN USART2_MspInit 0 */
+    /* USER CODE BEGIN USART2_MspInit 0 */
 
-  /* USER CODE END USART2_MspInit 0 */
+    /* USER CODE END USART2_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_USART2_CLK_ENABLE();
 
@@ -235,26 +236,27 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
     /* USART2 interrupt Init */
     HAL_NVIC_SetPriority(USART2_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(USART2_IRQn);
-  /* USER CODE BEGIN USART2_MspInit 1 */
+    /* USER CODE BEGIN USART2_MspInit 1 */
 
-  /* USER CODE END USART2_MspInit 1 */
+    /* USER CODE END USART2_MspInit 1 */
+
   }
 
 }
 
 /**
-* @brief UART MSP De-Initialization
-* This function freeze the hardware resources used in this example
-* @param huart: UART handle pointer
-* @retval None
-*/
+  * @brief UART MSP De-Initialization
+  * This function freeze the hardware resources used in this example
+  * @param huart: UART handle pointer
+  * @retval None
+  */
 void HAL_UART_MspDeInit(UART_HandleTypeDef* huart)
 {
   if(huart->Instance==USART2)
   {
-  /* USER CODE BEGIN USART2_MspDeInit 0 */
+    /* USER CODE BEGIN USART2_MspDeInit 0 */
 
-  /* USER CODE END USART2_MspDeInit 0 */
+    /* USER CODE END USART2_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_USART2_CLK_DISABLE();
 
@@ -270,9 +272,9 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* huart)
 
     /* USART2 interrupt DeInit */
     HAL_NVIC_DisableIRQ(USART2_IRQn);
-  /* USER CODE BEGIN USART2_MspDeInit 1 */
+    /* USER CODE BEGIN USART2_MspDeInit 1 */
 
-  /* USER CODE END USART2_MspDeInit 1 */
+    /* USER CODE END USART2_MspDeInit 1 */
   }
 
 }
