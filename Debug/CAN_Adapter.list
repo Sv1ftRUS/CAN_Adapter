@@ -1356,7 +1356,7 @@ static void MX_USART2_UART_Init(void)
  8000b20:	4b11      	ldr	r3, [pc, #68]	@ (8000b68 <MX_USART2_UART_Init+0x4c>)
  8000b22:	4a12      	ldr	r2, [pc, #72]	@ (8000b6c <MX_USART2_UART_Init+0x50>)
  8000b24:	601a      	str	r2, [r3, #0]
-  huart2.Init.BaudRate = 921600;
+  huart2.Init.BaudRate = 921600;//921600;
  8000b26:	4b10      	ldr	r3, [pc, #64]	@ (8000b68 <MX_USART2_UART_Init+0x4c>)
  8000b28:	f44f 2261 	mov.w	r2, #921600	@ 0xe1000
  8000b2c:	605a      	str	r2, [r3, #4]
